@@ -13,3 +13,4 @@ console.log(pessoa1.toString());
 console.log(pessoa2.toString());
 console.log(pessoa3.toString());
 console.log(pessoa4.toString());
+console.log(pessoa5.toString());
