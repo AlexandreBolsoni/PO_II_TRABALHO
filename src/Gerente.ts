@@ -5,33 +5,31 @@ se receber o valor do percentual, deve apenas usar o método bonificacao da supl
 caso o valor do percentual não seja passado na chamada do método, deve aplicar percentuais diferentes de bonificação, de acordo com o atributo nível: "conta" - 15%, "agência" - 20% e "regional" - 25%.
 Método toString() que retorna uma string contendo os valores dos atributos de gerente: iniciar informando se tratar de um "Gerente", seu nível e, em seguida, fazendo uso do toString() da super classe.*/ 
 
-import Funcionario from "./Funcionario.js";
+import Funcionario from "./Funcionario";
 
-type tiposNivel = "conta"|"agência"|"regional"
+type tiposNivel = "conta" | "agência" | "regional";
 
-export default class Gerente extends Funcionario{
-    protected _niveis:tiposNivel;
+export default class Gerente extends Funcionario {
+    protected _niveis: tiposNivel;
 
-    constructor(nivel:tiposNivel, matricula:number, salario:number, agencia:string, nome:string, endereco:string, telefone:string, dataNascimento:Date){ 
-        super(matricula, salario, agencia, nome, endereco, telefone, dataNascimento);
+    constructor(nivel: tiposNivel, salario: number, agencia: string, nome: string, endereco: string, telefone: string, dataNascimento: Date) { 
+        super(salario, agencia, nome, endereco, telefone, dataNascimento);
         this._niveis = nivel;
- 
     }
 
-    get niveis(){
+    get niveis() {
         return this._niveis;
     }
 
-    set niveis(nivel:tiposNivel){
+    set niveis(nivel: tiposNivel) {
         this._niveis = nivel;
     }
 
-    bonificacao(percentual?:number): number{
-        if(percentual){
+    bonificacao(percentual?: number): number {
+        if (percentual) {
             return super.bonificacao(percentual);
-
-        }else{
-            switch(this._niveis){
+        } else {
+            switch (this._niveis) {
                 case "conta":
                     return super.bonificacao(15);
                 case "agência":
@@ -39,13 +37,10 @@ export default class Gerente extends Funcionario{
                 case "regional":
                     return super.bonificacao(25);
             }
-
         }
     }
 
-    toString():string{
-        return `Gerente do Nível: ${this._niveis}${super.toString()}, `;
-    
+    toString(): string {
+        return `Gerente do Nível: ${this._niveis}, ${super.toString()}`;
+    }
 }
-}
-

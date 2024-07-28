@@ -9,10 +9,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Funcionario_js_1 = __importDefault(require("./Funcionario.js"));
-class Atendente extends Funcionario_js_1.default {
-    constructor(tipo, matricula, salario, agencia, nome, endereco, telefone, dataNascimento) {
-        super(matricula, salario, agencia, nome, endereco, telefone, dataNascimento);
+const Funcionario_1 = __importDefault(require("./Funcionario"));
+class Atendente extends Funcionario_1.default {
+    constructor(tipo, salario, agencia, nome, endereco, telefone, dataNascimento) {
+        super(salario, agencia, nome, endereco, telefone, dataNascimento);
         this._tipo = tipo;
     }
     get tipo() {
@@ -35,7 +35,7 @@ class Atendente extends Funcionario_js_1.default {
         }
     }
     toString() {
-        return `Atendente do tipo: ${this._tipo}${super.toString()}`;
+        return `Atendente do tipo: ${this._tipo}, ${super.toString()}`;
     }
 }
 exports.default = Atendente;

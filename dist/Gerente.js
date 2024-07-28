@@ -9,10 +9,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Funcionario_js_1 = __importDefault(require("./Funcionario.js"));
-class Gerente extends Funcionario_js_1.default {
-    constructor(nivel, matricula, salario, agencia, nome, endereco, telefone, dataNascimento) {
-        super(matricula, salario, agencia, nome, endereco, telefone, dataNascimento);
+const Funcionario_1 = __importDefault(require("./Funcionario"));
+class Gerente extends Funcionario_1.default {
+    constructor(nivel, salario, agencia, nome, endereco, telefone, dataNascimento) {
+        super(salario, agencia, nome, endereco, telefone, dataNascimento);
         this._niveis = nivel;
     }
     get niveis() {
@@ -37,7 +37,7 @@ class Gerente extends Funcionario_js_1.default {
         }
     }
     toString() {
-        return `Gerente do Nível: ${this._niveis}${super.toString()}, `;
+        return `Gerente do Nível: ${this._niveis}, ${super.toString()}`;
     }
 }
 exports.default = Gerente;

@@ -10,14 +10,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Pessoa_js_1 = __importDefault(require("./Pessoa.js"));
-class Funcionario extends Pessoa_js_1.default {
-    constructor(matricula, salario, agencia, nome, endereco, telefone, dataNascimento) {
+const Pessoa_1 = __importDefault(require("./Pessoa"));
+class Funcionario extends Pessoa_1.default {
+    constructor(salario, agencia, nome, endereco, telefone, dataNascimento) {
         super(nome, endereco, telefone, dataNascimento);
-        this._matricula = matricula;
+        this._matricula = ++Funcionario.qtFuncionarios; // Incrementa automaticamente a matrícula
         this._salario = salario;
         this._agencia = agencia;
-        Funcionario.qtFuncionarios++;
     }
     get matricula() {
         return this._matricula;
@@ -38,7 +37,7 @@ class Funcionario extends Pessoa_js_1.default {
         return this._salario * percentual / 100;
     }
     toString() {
-        return `${super.toString()}, Matricula: ${this._matricula}, Salário: ${this._salario}, Agência: ${this._agencia}`;
+        return `${super.toString()}, Matrícula: ${this._matricula}, Salário: ${this._salario.toFixed(2)}, Agência: ${this._agencia}`;
     }
 }
 Funcionario.qtFuncionarios = 0;
