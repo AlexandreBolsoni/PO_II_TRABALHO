@@ -34,7 +34,12 @@ class Funcionario extends Pessoa_1.default {
         this._salario = salario;
     }
     bonificacao(percentual) {
-        return this._salario * percentual / 100;
+        if (percentual == undefined) {
+            throw new SyntaxError("O percentual deve ser informado");
+        }
+        else {
+            return this._salario * percentual / 100;
+        }
     }
     toString() {
         return `${super.toString()}, Matrícula: ${this._matricula}, Salário: ${this._salario.toFixed(2)}, Agência: ${this._agencia}`;

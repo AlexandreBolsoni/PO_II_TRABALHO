@@ -1,11 +1,13 @@
-/*Criar um vetor de Funcionários e insira nele alguns Gerentes e Atendentes (pelo menos quatro de cada, de forma intercalada e com valores de atributos diversificados). Em seguida, usar a estrutura forEach no vetor para executar o método toString dos funcionários, a fim de testar o comportamento polimórfico daquele método.
-Usar o método bonificacao() em objetos gerente e atendente, sem informar o valor do percentual como parâmetro, e verificar se os cálculos foram realizados conforme especificado para cada classe.
-Usar o método bonificacao(percentual) em objetos gerente e atendente, informando o valor do percentual como parâmetro, e verificar se os cálculos foram realizados conforme especificado para cada classe.*/
-
 import Atendente from "./Atendente";
-import Gerente from "./Gerente";
 import Funcionario from "./Funcionario";
+import Gerente from "./Gerente";
 
+/* 
+Criar um vetor de Funcionários e insira nele alguns Gerentes e Atendentes (pelo menos quatro de cada, de forma intercalada e com valores de atributos diversificados). 
+Em seguida, usar a estrutura forEach no vetor para executar o método toString dos funcionários, a fim de testar o comportamento polimórfico daquele método.
+Usar o método bonificacao() em objetos gerente e atendente, sem informar o valor do percentual como parâmetro, e verificar se os cálculos foram realizados conforme especificado para cada classe.
+Usar o método bonificacao(percentual) em objetos gerente e atendente, informando o valor do percentual como parâmetro, e verificar se os cálculos foram realizados conforme especificado para cada classe.
+*/
 
 const vetFuncionarios: Array<Funcionario> = [
     new Atendente("caixa", 2500, "Agência 1", "Fernando", "Rua A, 10", "11966666666", new Date(1990, 3, 10)),
@@ -16,8 +18,8 @@ const vetFuncionarios: Array<Funcionario> = [
     new Gerente("conta", 4500, "Agência 3", "Lucas", "Rua F, 60", "11933333333", new Date(1978, 9, 15)),
     new Atendente("pessoal", 2900, "Agência 4", "Juliana", "Rua G, 70", "11922222222", new Date(2000, 1, 1)),
     new Gerente("conta", 5500, "Agência 4", "Bruno", "Rua H, 80", "11911111111", new Date(1985, 3, 3))
+];
 
-]; // Vetor para armazenar os atendentes e gerentes
-
-//
+vetFuncionarios.forEach((funcionario) => console.log(funcionario.toString()));
 vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome}: ${funcionario.bonificacao()}`));
+vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome} com percentual 5%: ${funcionario.bonificacao(5)}`));

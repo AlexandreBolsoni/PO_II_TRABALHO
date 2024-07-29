@@ -26,7 +26,7 @@ export default class Atendente extends Funcionario {
     }
 
     bonificacao(percentual?: number): number {
-        if (percentual) {
+        if (percentual != undefined) {
             return super.bonificacao(percentual);
         } else {
             switch (this._tipo) {

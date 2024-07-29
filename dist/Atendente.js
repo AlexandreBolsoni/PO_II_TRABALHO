@@ -22,7 +22,7 @@ class Atendente extends Funcionario_1.default {
         this._tipo = tipo;
     }
     bonificacao(percentual) {
-        if (percentual) {
+        if (percentual != undefined) {
             return super.bonificacao(percentual);
         }
         else {

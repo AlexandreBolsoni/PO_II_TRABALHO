@@ -39,8 +39,13 @@ export default class Funcionario extends Pessoa {
         this._salario = salario;
     }
 
-    bonificacao(percentual: number): number {
-        return this._salario * percentual / 100;
+    bonificacao(percentual?: number): number {
+        if (percentual == undefined){
+            throw new SyntaxError("O percentual deve ser informado");
+        } else {
+            return this._salario * percentual / 100;
+        }
+        
     }
 
     toString(): string {
