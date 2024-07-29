@@ -22,4 +22,5 @@ const vetFuncionarios: Array<Funcionario> = [
 
 vetFuncionarios.forEach((funcionario) => console.log(funcionario.toString()));
 vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome}: ${funcionario.bonificacao()}`));
-vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome} com percentual 5%: ${funcionario.bonificacao(5)}`));
+vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome} com percentual 5%: ${funcionario.bonificacao(5).toFixed(2)}`));
+vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome} com percentual 10%: ${funcionario.bonificacao(10).toFixed(2)}`));
