@@ -1,7 +1,7 @@
 import Atendente from "./Atendente";
 import Funcionario from "./Funcionario";
 import Gerente from "./Gerente";
-import Cliente from "./Cliente";
+
 
 /* 
 Criar um vetor de Funcionários e insira nele alguns Gerentes e Atendentes (pelo menos quatro de cada, de forma intercalada e com valores de atributos diversificados). 
