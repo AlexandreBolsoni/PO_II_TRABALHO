@@ -1,6 +1,7 @@
 import Atendente from "./Atendente";
 import Funcionario from "./Funcionario";
 import Gerente from "./Gerente";
+import  Cliente from "./Cliente";
 
 
 /* 
@@ -19,6 +20,8 @@ const vetFuncionarios: Array<Funcionario> = [
     new Gerente("conta", 4500, "Agência 3", "Lucas", "Rua F, 60", "11933333333", new Date(1978, 9, 15)),
     new Atendente("pessoal", 2900, "Agência 4", "Juliana", "Rua G, 70", "11922222222", new Date(2000, 1, 1)),
     new Gerente("conta", 5500, "Agência 4", "Bruno", "Rua H, 80", "11911111111", new Date(1985, 3, 3))
+    new Cliente("agencia 4 ", "Fernando", "Rua A, 10", "11966666666", new Date(1990, 3, 10))
+
 
 ];
 
