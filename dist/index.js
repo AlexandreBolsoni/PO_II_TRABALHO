@@ -6,13 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Atendente_1 = __importDefault(require("./Atendente"));
 const Funcionario_1 = __importDefault(require("./Funcionario"));
 const Gerente_1 = __importDefault(require("./Gerente"));
-const Cliente_1 = __importDefault(require("./Cliente"));
-/*
-Criar um vetor de Funcionários e insira nele alguns Gerentes e Atendentes (pelo menos quatro de cada, de forma intercalada e com valores de atributos diversificados).
-Em seguida, usar a estrutura forEach no vetor para executar o método toString dos funcionários, a fim de testar o comportamento polimórfico daquele método.
-Usar o método bonificacao() em objetos gerente e atendente, sem informar o valor do percentual como parâmetro, e verificar se os cálculos foram realizados conforme especificado para cada classe.
-Usar o método bonificacao(percentual) em objetos gerente e atendente, informando o valor do percentual como parâmetro, e verificar se os cálculos foram realizados conforme especificado para cada classe.
-*/
+const Cliente_1 = require("./Cliente"); // Ajuste na importação
+// Criação do vetor de Funcionários
 const vetFuncionarios = [
     new Atendente_1.default("caixa", 2500, "Agência 1", "Fernando", "Rua A, 10", "11966666666", new Date(1990, 3, 10)),
     new Gerente_1.default("regional", 5000, "Agência 1", "Marta", "Rua C, 30", "11944444444", new Date(1980, 1, 5)),
@@ -24,7 +19,7 @@ const vetFuncionarios = [
     new Gerente_1.default("conta", 5500, "Agência 4", "Bruno", "Rua H, 80", "11911111111", new Date(1985, 3, 3))
 ];
 // Criação de um objeto Cliente
-const cliente = new Cliente_1.default("Agência 5", "Cliente Nome", "Rua I, 90", "11900000000", new Date(1992, 6, 12));
+const cliente = new Cliente_1.Cliente("Agência 5", "Cliente Nome", "Rua I, 90", "11900000000", new Date(1992, 6, 12));
 // Verificar se o objeto é uma instância de Funcionario antes de adicionar ao vetor
 if (cliente instanceof Funcionario_1.default) {
     vetFuncionarios.push(cliente);
@@ -32,8 +27,12 @@ if (cliente instanceof Funcionario_1.default) {
 else {
     console.error("Erro: Cliente não pode ser adicionado ao vetor de Funcionários.");
 }
+// Exibição do vetor de funcionários para verificar a inserção
 vetFuncionarios.forEach((funcionario) => console.log(funcionario.toString()));
-vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome}: ${funcionario.bonificacao()}`));
-vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome} com percentual 5%: ${funcionario.bonificacao(5).toFixed(2)}`));
-vetFuncionarios.forEach((funcionario) => console.log(`Bonificação do ${funcionario.nome} com percentual 10%: ${funcionario.bonificacao(10).toFixed(2)}`));
+// Verificação e execução do método bonificacao
+vetFuncionarios.forEach((funcionario) => {
+    console.log(`Bonificação do ${funcionario.nome}: ${funcionario.bonificacao()}`);
+    console.log(`Bonificação do ${funcionario.nome} com percentual 5%: ${funcionario.bonificacao(5).toFixed(2)}`);
+    console.log(`Bonificação do ${funcionario.nome} com percentual 10%: ${funcionario.bonificacao(10).toFixed(2)}`);
+});
 //# sourceMappingURL=index.js.map

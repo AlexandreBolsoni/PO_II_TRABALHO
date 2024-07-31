@@ -30,11 +30,8 @@ vetFuncionarios.forEach((funcionario) => console.log(funcionario.toString()));
 
 // Verificação e execução do método bonificacao
 vetFuncionarios.forEach((funcionario) => {
-    if ('bonificacao' in funcionario && typeof funcionario.bonificacao === 'function') {
         console.log(`Bonificação do ${funcionario.nome}: ${funcionario.bonificacao()}`);
         console.log(`Bonificação do ${funcionario.nome} com percentual 5%: ${funcionario.bonificacao(5).toFixed(2)}`);
         console.log(`Bonificação do ${funcionario.nome} com percentual 10%: ${funcionario.bonificacao(10).toFixed(2)}`);
-    } else {
-        console.log(`Erro: ${funcionario.nome} não possui o método bonificacao.`);
-    }
+
 });
